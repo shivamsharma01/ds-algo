@@ -1,13 +1,9 @@
 package leetcode.thirty_days_challenge;
 
 public class LastStone {
-	public static void main(String[] args) {
-		int[] arr = new int[] { 1, 0, 1 };
-		buildHeap(arr);
-		for (int i : arr) {
-			System.out.print(i + "\t");
-		}
-		System.out.println(lastStone(arr));
+	public int lastStoneWeight(int[] stones) {
+		buildHeap(stones);
+		return lastStone(stones);
 	}
 
 	private static int lastStone(int[] arr) {
