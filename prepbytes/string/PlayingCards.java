@@ -1,4 +1,4 @@
-package prepbytes.questions.string;
+package prepbytes.string;
 
 import java.io.IOException;
 import java.util.Scanner;
