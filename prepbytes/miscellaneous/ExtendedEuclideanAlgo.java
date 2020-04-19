@@ -1,43 +1,29 @@
 package prepbytes.miscellaneous;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ExtendedEuclideanAlgo {
-	int x;
-	int y;
+	int x1;
+	int y1;
 
-	public void solve(long a, long b) {
-		long x = 0, y = 1, lastx = 1, lasty = 0, temp;
-		while (b != 0) {
-			long q = a / b;
-			long r = a % b;
+	public static void main(String args[]) throws IOException {
+		System.out.println(new ExtendedEuclideanAlgo().extendedEuclidean(3, 7));
+	}
 
-			a = b;
-			b = r;
-
-			temp = x;
-			x = lastx - q * x;
-			lastx = temp;
-
-			temp = y;
-			y = lasty - q * y;
-			lasty = temp;
+	public int extendedEuclidean(int a, int b) {
+		if (b == 0) {
+			x1 = 1;
+			y1 = 0;
+			return a;
 		}
-		System.out.println("Roots  x : " + lastx + " y :" + lasty);
+		int result = extendedEuclidean(b, a % b);
+		System.out.println("x value is " + x1 + " " + y1);
+		int x = y1, y = x1 - ((int) a / b) * y1;
+		y1 = y;
+		x1 = x;
+		System.out.println("x value is " + x1 + " " + y1);
+		return result;
 	}
 
-	/** Main function **/
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Extended Euclid Algorithm Test\n");
-		/** Make an object of ExtendedEuclid class **/
-		ExtendedEuclideanAlgo ee = new ExtendedEuclideanAlgo();
-
-		/** Accept two integers **/
-		System.out.println("Enter a b of ax + by = gcd(a, b)\n");
-		long a = scan.nextLong();
-		long b = scan.nextLong();
-		/** Call function solve of class ExtendedEuclid **/
-		ee.solve(a, b);
-	}
 }
