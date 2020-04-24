@@ -1,16 +1,25 @@
-package general.sort;
+package prepbytes.topic.sorting;
 
-/*
- * O(nlogn)
- * divide and conquer algo
- * out-of-place algo - O(n) extra space
- */
-public class MergeSort {
-	public static void main(String[] args) {
-		int[] arr = new int[] { 5, 4, 3, 2, 1, 9, 8, 7, 6 };
-		mergeSort(arr, 0, arr.length - 1);
-		for (int i : arr) {
-			System.out.print(i + "\t");
+import java.io.IOException;
+import java.util.Scanner;
+
+public class FindTheMisplacedElements {
+	public static void main(String args[]) throws IOException {
+		Scanner scan = new Scanner(System.in);
+		byte t = scan.nextByte();
+		while (t-- > 0) {
+			int n = scan.nextInt(), count = 0;
+			int[] arr = new int[n], sorted = new int[n];
+			for (int i = 0; i < n; i++) {
+				arr[i] = scan.nextInt();
+				sorted[i] = arr[i];
+			}
+			mergeSort(sorted, 0, n - 1);
+			for (int i = 0; i < n; i++) {
+				if (arr[i] != sorted[i])
+					count++;
+			}
+			System.out.println(count);
 		}
 	}
 

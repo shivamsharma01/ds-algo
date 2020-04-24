@@ -25,6 +25,9 @@ public class MaximumDivisorInRange {
 					break;
 				}
 			}
+			int g2 = maxdiv(a, b, low, high);
+			System.out.println(g2);
+			System.out.println(g2 == greatestDivisor);
 			System.out.println(greatestDivisor);
 		}
 	}
@@ -45,4 +48,20 @@ public class MaximumDivisorInRange {
 		}
 		return factors;
 	}
+
+	private static int maxdiv(int a, int b, int low, int high) {
+
+		int g = gcd(a, b);
+		// System.out.println(g);
+
+		int res = -1;
+		if (low == 0)
+			low = low + 1;
+		for (int i = low; i <= g && i <= high; i++)
+			if (g % i == 0)
+				res = Math.max(res, Math.max(i, g / i));
+
+		return res;
+	}
+
 }
