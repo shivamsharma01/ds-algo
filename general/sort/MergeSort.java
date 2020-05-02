@@ -40,4 +40,5 @@ public class MergeSort {
 				arr[i] = t2[i2++];
 		}
 	}
+
 }
