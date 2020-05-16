@@ -1,4 +1,4 @@
-package leetcode.thirty_days_challenge;
+package leetcode.thirty_days_challenge.april;
 
 public class BitwiseANDOfNumbersRange {
 	public static void main(String[] args) {

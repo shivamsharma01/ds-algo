@@ -1,4 +1,4 @@
-package leetcode.thirty_days_challenge;
+package leetcode.thirty_days_challenge.april;
 
 public class MinStack {
 	private Node top;

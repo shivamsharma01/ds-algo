@@ -1,4 +1,4 @@
-package leetcode.thirty_days_challenge;
+package leetcode.thirty_days_challenge.april;
 
 public class BinaryTreeMaximumPathSum {
 	int max = Integer.MIN_VALUE;

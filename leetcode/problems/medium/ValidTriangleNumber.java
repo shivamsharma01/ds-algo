@@ -1,6 +1,4 @@
-package leetcode.problems;
-
-import java.util.Arrays;
+package leetcode.problems.medium;
 
 class ValidTriangleNumber {
 

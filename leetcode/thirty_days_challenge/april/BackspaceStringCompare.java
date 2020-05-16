@@ -1,4 +1,4 @@
-package leetcode.thirty_days_challenge;
+package leetcode.thirty_days_challenge.april;
 
 public class BackspaceStringCompare {
 	public boolean backspaceCompare(String S, String T) {

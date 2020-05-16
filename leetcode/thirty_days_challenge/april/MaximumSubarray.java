@@ -1,4 +1,4 @@
-package leetcode.thirty_days_challenge;
+package leetcode.thirty_days_challenge.april;
 
 class MaximumSubarray {
     public int maxSubArray(int[] nums) {

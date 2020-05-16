@@ -10,20 +10,42 @@ public class AvoidFight {
 		long k = sc.nextInt();
 		for (int i = 0; i < arr.length; i++)
 			arr[i] = sc.nextInt();
+		Arrays.sort(arr);
 		System.out.println(getOperations(arr, k));
 	}
 
 	private static int getOperations(int[] arr, long k) {
 		int n = arr.length - 1, operations = 0;
-		if (n == 1)
-			return 0;
-		Arrays.sort(arr);
-		while (arr[n]-- - arr[0]++ > k) {
+		while (arr[n] - arr[0] > k) {
 			operations++;
-			if (arr[n - 1] > arr[n] || arr[1] < arr[0])
-				Arrays.sort(arr);
+			arr[n]--;
+			arr[0]++;
+			sortStart(arr);
+			sortEnd(arr);
 		}
 		return operations;
+	}
+
+	private static void sortStart(int[] arr) {
+		int pos = 0, n = arr.length - 1, temp;
+		while (pos < n && arr[pos] >= arr[pos + 1])
+			pos++;
+		if (pos <= n) {
+			temp = arr[pos];
+			arr[pos] = arr[0];
+			arr[0] = temp;
+		}
+	}
+
+	private static void sortEnd(int[] arr) {
+		int pos = arr.length - 1, n = pos, temp;
+		while (pos > 0 && arr[pos] <= arr[pos - 1])
+			pos--;
+		if (pos >= 0) {
+			temp = arr[pos];
+			arr[pos] = arr[n];
+			arr[n] = temp;
+		}
 	}
 
 }

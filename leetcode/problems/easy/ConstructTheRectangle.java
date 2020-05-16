@@ -1,4 +1,4 @@
-package leetcode.problems;
+package leetcode.problems.easy;
 
 public class ConstructTheRectangle {
 	public static void main(String[] args) {

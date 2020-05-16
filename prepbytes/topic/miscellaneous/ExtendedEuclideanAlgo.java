@@ -18,7 +18,7 @@ public class ExtendedEuclideanAlgo {
 		}
 		int result = extendedEuclidean(b, a % b);
 		System.out.println("x value is " + x1 + " " + y1);
-		int x = y1, y = x1 - ((int) a / b) * y1;
+		int x = y1, y = x1 - (a / b) * y1;
 		y1 = y;
 		x1 = x;
 		System.out.println("x value is " + x1 + " " + y1);
