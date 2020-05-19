@@ -1,0 +1,15 @@
+low to upper
+
+ch = ch & '_'
+
+upper to lower
+ch = ch | ' '; (space)
+
+
+to check if number is 2^n
+take n & n-1
+it should be 0
+eg
+	8	= 1000
+	7	= 0111
+8 & 7 	= 0000

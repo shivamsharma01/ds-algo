@@ -1,4 +1,4 @@
-package prepbytes.topic.DivideNConquer;
+package prepbytes.topic.divideNconquer;
 
 import java.io.IOException;
 import java.util.Scanner;
