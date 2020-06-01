@@ -4,7 +4,6 @@ package leetcode.problems.easy;
 public class IncreasingDecreasingString {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		IncreasingDecreasingString o = new IncreasingDecreasingString();
 		System.out.println(o.sortString("aaaabbbbcccc"));
 		System.out.println(o.sortString("rat"));

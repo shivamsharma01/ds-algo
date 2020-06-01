@@ -1,5 +1,6 @@
 package leetcode.problems.easy;
 
+// https://leetcode.com/problems/construct-the-rectangle/
 public class ConstructTheRectangle {
 	public static void main(String[] args) {
 		int[] arr = constructRectangle(4);

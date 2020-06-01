@@ -1,0 +1,390 @@
+2020
+------------------------------------------------------------------------------
+							January	
+------------------------------------------------------------------------------
+Challenge
+	Division 1	https://www.codechef.com/JAN20A
+		Chef and Dynamo
+		Doraemon
+		Chefina and Prefix Suffix Sums
+		English
+		Doofish Matrix
+		(Challenge) Building Anthills
+		Chefland Army
+		Army of Me
+		
+	Division 2	https://www.codechef.com/JAN20B
+		Breaking Bricks
+		Chef and Dynamo
+		Doraemon
+		Equality
+		Chefina and Prefix Suffix Sums
+		English
+		Doofish Matrix
+		(Challenge) Building Ant					
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1	https://www.codechef.com/COOK114A
+		Range AND
+		Chefina and Sums
+		Profitable Paths
+		Almost Palindromic
+		Count It
+		
+	Division 2	https://www.codechef.com/COOK114B
+		Chef Chick
+		Exam Cheating
+		Range AND
+		Profitable Paths
+		Chefina and Sums
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1	https://www.codechef.com/LTIME80A
+		Under the Tunnels
+		Construct Array
+		Folding Paper
+		Minimum and Maximum
+		CCDSAP Exam
+		
+	Division 2	https://www.codechef.com/LTIME80B
+		Chef and Street Food
+		Bob and His Friends
+		Under the Tunnels
+		Construct Array
+		Folding Paper
+------------------------------------------------------------------------------
+							February 	
+------------------------------------------------------------------------------
+Challenge
+	Division 1	https://www.codechef.com/FEB20A
+		No Change Required
+		Long Contest and Cook Off Overlaps
+		Chef and Railway Stations
+		(Challenge) Raisins
+		Expected Change
+		Chef and Gordon Ramsay 2
+		Balancing Network Revisited
+		Polygon Chain
+
+	Division 2	https://www.codechef.com/FEB20B
+		School of Geometry
+		Hard Cash
+		The Theatre Problem
+		No Change Required
+		Long Contest and Cook Off Overlaps
+		(Challenge) Raisins
+		Chef and Railway Stations
+		Expected Change
+------------------------------------------------------------------------------					
+Cook-Off
+	Division 1	https://www.codechef.com/COOK115A
+		XOR Game
+		Maximum Subsequence Sum
+		Chef and Pepperoni Pizza Again
+		Must Be Divisible
+		Sweetest Candy
+		
+	Division 2	https://www.codechef.com/COOK115B
+		Tax Slabs
+		Penalty Shoot-Out II
+		XOR Game
+		Maximum Subsequence Sum
+		Chef and Pepperoni Pizza Again
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1	https://www.codechef.com/LTIME81A
+		Swapping to Palindrome
+		Secret Mission
+		Monsters Battle
+		Painter ProblemAdd problem to Todo list
+		Coronavirus
+		
+	Division 2	https://www.codechef.com/LTIME81B
+		At the Gates
+		Not All Flavours
+		Swapping to Palindrome
+		Secret Mission
+		Monsters Battle
+------------------------------------------------------------------------------
+							March
+------------------------------------------------------------------------------
+Challenge
+	Division 1	https://www.codechef.com/MARCH20A
+		Lasers Everywhere
+		Chef and DAG
+		Lasers Everywhere Alternative
+		Winning Ways 2
+		Break
+		Inverse of a Function
+		Egg-free DAG
+		(Challenge) 300 IQ Ants
+		Good Subsequences
+	
+	Division 2	https://www.codechef.com/MARCH20B
+		Pintu and Fruits
+		XOR Engine
+		Ada Bishop 2
+		Lasers Everywhere
+		Chef and DAG
+		Lasers Everywhere Alternative
+		Winning Ways 2
+		Break
+		(Challenge) 300 IQ Ants
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1	https://www.codechef.com/COOK116A
+		Mysterious Sequence
+		Maximize Letter Beauty
+		Escape the Tree
+		Random Chocolates
+		A Tree to Remember
+	
+	Division 2	https://www.codechef.com/COOK116B
+		Find Your Gift
+		Box of Chocolates
+		Mysterious Sequence
+		Maximize Letter Beauty
+		Escape the Tree
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1	https://www.codechef.com/LTIME82A
+		Maximize LCM
+		Strip in a Tree!
+		Chef and Secret Recipe
+		Nested Rotation
+		Mysterious Ratio
+	
+	Division 2	https://www.codechef.com/LTIME82B
+		Chef Swaps Digits
+		Good Prefix
+		Maximize LCM
+		Strip in a Tree!
+		Nested Rotation
+------------------------------------------------------------------------------
+							April
+------------------------------------------------------------------------------
+Challenge
+	Division 1	https://www.codechef.com/APRIL20A
+		Strange Number
+		Squared Subsequences
+		Leaked Answers (Challenge)
+		Ready Bitwise
+		Perfect Power Divisors
+		Factor Tree
+		Line Line Line Graph
+		A Leisurely Journey
+		
+	Division 2	https://www.codechef.com/APRIL20B
+		COVID Pandemic and Long Queue
+		Sell All the Cars
+		Strange Number
+		Unit GCD
+		Leaked Answers (Challenge)
+		Squared Subsequences
+		Ready Bitwise
+		Factor Tree
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1	https://www.codechef.com/COOK117A
+		Simple Operations
+		Tower Counting
+		Inversions in Permutations
+		The Gifting Problem
+		Maximum GCD Subset
+	
+	Division 2	https://www.codechef.com/COOK117B
+		Lift Requests
+		Matrix Decomposition
+		Simple Operations
+		Tower Counting
+		Inversions in Permutations
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1	https://www.codechef.com/LTIME83A
+		Positive Mex
+		Triangle Query
+		Xor Jar Muluk Tar
+		Dot Time
+		Jumping Fever
+	
+	Division 2	https://www.codechef.com/LTIME83B
+		Chef in Fantasy League
+		Another Birthday Present!
+		Positive Mex
+		Triangle Query
+		Dot Time
+------------------------------------------------------------------------------
+							May
+------------------------------------------------------------------------------
+Challenge
+	Division 1
+		Triple Sort
+		Chef and Bitwise Product
+		Sorting Vases
+		Buying a New String
+		(Challenge) Nanobots
+		Binary Land
+		Not a Real World Problem
+		Chef and Rainbow Road
+		Precise Bipartite Pairing
+		Precise Pairing
+	
+	Division 2
+		Coronavirus Spread
+		Isolation Centers
+		Triple Sortunsolved
+		Chef and Bitwise Product
+		Sorting Vases
+		(Challenge) Nanobots
+		Not a Real World Problem
+		Buying a New String
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1	https://www.codechef.com/COOK118A
+		Roads in Chefland
+		Chef, Chefina and Their Friendship
+		Chefina on a Trip
+		Chefland Squads and the Army Chief
+		Curious Queries
+	
+	Division 2	https://www.codechef.com/COOK118B
+		Chef and Recipe
+		Chef, Chefina and Their Friendship
+		Impressing Chefina
+		Roads in Chefland
+		Chefland Squads and the Army Chief
+------------------------------------------------------------------------------
+Lunchtime	
+	Division 1	https://www.codechef.com/LTIME84A
+		Convert the String
+		Tree difference
+		Absolute Min Max
+		Escape One
+		GCD of the Submasks
+	
+	Division 2	https://www.codechef.com/LTIME84B
+		Lost Weekends
+		Weird Walk
+		Convert the String
+		Tree difference
+		Escape One
+------------------------------------------------------------------------------
+							June
+------------------------------------------------------------------------------
+Challenge
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+							July
+------------------------------------------------------------------------------
+Challenge
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+							August
+------------------------------------------------------------------------------
+Challenge
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+							September
+------------------------------------------------------------------------------
+Challenge
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+							October
+------------------------------------------------------------------------------
+Challenge
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+							November
+------------------------------------------------------------------------------
+Challenge
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+							December
+------------------------------------------------------------------------------
+Challenge
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Cook-Off
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------
+Lunchtime
+	Division 1
+	
+	Division 2
+------------------------------------------------------------------------------

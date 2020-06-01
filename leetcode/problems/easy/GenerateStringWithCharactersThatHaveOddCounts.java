@@ -2,6 +2,7 @@ package leetcode.problems.easy;
 
 import java.util.Arrays;
 
+// https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/
 public class GenerateStringWithCharactersThatHaveOddCounts {
 
 	public static void main(String[] args) {

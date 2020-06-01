@@ -1,0 +1,4 @@
+String comparison in constant time
+1. KMP (program in general -> string -> SubstringSearch)
+2. Z algorithm
+3. String Hashing
