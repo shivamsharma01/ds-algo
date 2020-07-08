@@ -6,7 +6,7 @@ Challenge
 	Division 1	https://www.codechef.com/JAN20A
 		Chef and Dynamo
 		Doraemon
-		Chefina and Prefix Suffix Sums
+		Chefina and Prefix Suffix Sums	https://www.codechef.com/viewsolution/28849926
 		English
 		Doofish Matrix
 		(Challenge) Building Anthills
@@ -272,9 +272,18 @@ Lunchtime
 							June
 ------------------------------------------------------------------------------
 Challenge
-	Division 1
-	
-	Division 2
+	Division 1	https://www.codechef.com/JUNE20A
+
+	Division 2	https://www.codechef.com/JUNE20B
+		Chef and Price Control
+		Chef and String
+		Chef and Icecream
+		The Tom and Jerry Game!
+		Even Matrix
+		Covid Sampling (Challenge)
+		Operations on a Tuple
+		The Delicious Cake
+		Guessing Game
 ------------------------------------------------------------------------------
 Cook-Off
 	Division 1

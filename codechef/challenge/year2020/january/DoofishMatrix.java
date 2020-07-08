@@ -1,4 +1,4 @@
-package codechef;
+package codechef.challenge.year2020.january;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -9,17 +9,62 @@ import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.InputMismatchException;
 
-public class TakeInput {
-	public static void main(String[] args) {
-		InputReader in = new InputReader(System.in);
-		OutputWriter out = new OutputWriter(System.out);
-		int[] chef = new int[10 + 1];
-		for (int i = 0; chef[i] != 0; i++) {
-			out.print(chef[i] + " ");
+public class DoofishMatrix {
+	static InputReader in = new InputReader(System.in);
+	static OutputWriter out = new OutputWriter(System.out);
+
+	public static void main(String[] args) throws java.lang.Exception {
+		short t = Short.parseShort(in.next());
+		while (t-- > 0) {
+			long time = System.nanoTime();
+			short n = Short.parseShort(in.next());
+			if (n == 1) {
+				out.printLine("Hooray\n1\n");
+			} else if (n % 2 == 1) {
+				out.printLine("Boo");
+			} else {
+				out.printLine("Hooray");
+				printDoofishMatrix(n);
+			}
+			out.flush();
+			System.out.println((System.nanoTime() - time) / 1000000000);
 		}
-		int t = in.readInt();
-		out.flush();
-		out.close();
+	}
+
+	private static void printDoofishMatrix(short n) {
+		short[][] arr = new short[n][n];
+		short max = (short) (2 * n - 1);
+		arr[0][0] = max;
+		for (short i = 1; i < n; i++) {
+			arr[0][i] = i;
+			arr[i][i] = max;
+		}
+		short next = 2;
+		for (short i = 1; i < n - 1; i++) {
+			arr[i][n - 1] = next;
+			next += 2;
+			if (next >= n)
+				next = 1;
+		}
+		for (short i = 1, cur; i < n; i++) {
+			cur = (short) (arr[i][n - 1] + 1);
+			if (cur == n)
+				cur = 1;
+			for (short j = (short) (i + 1); j < n - 1; j++) {
+				arr[i][j] = cur++;
+				if (cur == n)
+					cur = 1;
+			}
+		}
+		for (short i = 0; i < n; i++) {
+			for (short j = 0; j < n; j++) {
+				if (i > j)
+					out.print(max - arr[j][i] + " ");
+				else
+					out.print(arr[i][j] + " ");
+			}
+			out.printLine();
+		}
 	}
 
 }
@@ -36,7 +81,7 @@ class InputReader {
 		this.stream = stream;
 	}
 
-	public int read() {
+	private int read() {
 		if (numChars == -1)
 			throw new InputMismatchException();
 		if (curChar >= numChars) {
@@ -97,17 +142,6 @@ class InputReader {
 	public interface SpaceCharFilter {
 		public boolean isSpaceChar(int ch);
 	}
-}
-
-class IOUtils {
-
-	public static int[] readIntArray(InputReader in, int size) {
-		int[] array = new int[size];
-		for (int i = 0; i < size; i++)
-			array[i] = in.readInt();
-		return array;
-	}
-
 }
 
 class OutputWriter {

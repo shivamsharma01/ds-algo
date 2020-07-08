@@ -1,0 +1,1 @@
+There exist two algorithms to find MMI of a number. First is the Extended Euclidian algorithm and the second using Fermat’s Little Theorem.

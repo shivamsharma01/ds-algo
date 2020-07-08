@@ -1,7 +1,7 @@
 package general.string;
 
 // Knuth–Morris–Pratt (KMP)
-public class SubstringSearch {
+public class KMPSubstringSearch {
 	public static void main(String[] args) {
 		System.out.println(KMP("abcxabcdabxabcdabcdabcy".toCharArray(), "abcdabcy".toCharArray()));
 	}
