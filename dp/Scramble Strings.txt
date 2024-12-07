@@ -1,0 +1,64 @@
+import java.util.Arrays;
+public class Main {
+	public static void main(String[] args) {
+		String a = "great";
+		scrambledUtil(a,"great");
+		scrambledUtil(a,"grate");
+		scrambledUtil(a,"greta");
+		scrambledUtil(a,"grtae");
+		scrambledUtil(a,"rgeat");
+		scrambledUtil(a,"rgate");
+		scrambledUtil(a,"rgeta");
+		scrambledUtil(a,"gater");
+		
+		scrambledUtil(a,"agter");
+		
+		a = "abcde";
+		System.out.println("\n\n");
+		scrambledUtil(a,"caebd");
+		scrambledUtil(a,"ceabd");
+		scrambledUtil(a,"cbdea");
+    }
+    
+    private static void scrambledUtil(String a, String b) {
+        int n = a.length(), m = b.length();
+        System.out.print("'"+a+"' and '"+b+"' are ");
+        if (n == 0 && m == 0) {
+            System.out.println("Scrambled Strings");
+        } else if (n != m) {
+            System.out.println("Not Scrambled Strings");
+        } else {
+            int dp[][][][] = new int[n][n][n][n];
+            for (int i=0; i<n; i++) {
+                for (int j = 0; j<n; j++) {
+                    for (int k = 0; k<n; k++) {
+                        Arrays.fill(dp[i][j][k], -1);
+                    }
+                }
+            }
+            if (ScrambledStrings(dp, a, b, 0, n-1, 0, m-1)) {
+                System.out.println("Scrambled Strings");
+            } else {
+                System.out.println("Not Scrambled Strings");
+            }
+        }
+        
+    }
+        
+    private static boolean ScrambledStrings(int dp[][][][], String a, String b, int i1, int j1, int i2, int j2) {
+        if (j1-i1 == 0) return a.charAt(i1) == b.charAt(i2);
+        if (dp[j1][i1][j2][i2] != -1) {
+            return dp[j1][i1][j2][i2] == 1 ? true : false;
+        }
+        boolean isScrambledWithSwap = false, isScrambledWithoutSwap = false;
+        for (int k = 0; i1 + k < j1 && !isScrambledWithSwap && !isScrambledWithoutSwap; k++) {
+            isScrambledWithSwap = ScrambledStrings(dp, a, b, i1, i1 + k, j2 - k, j2) && 
+            ScrambledStrings(dp, a, b, i1 + k + 1, j1, i2, j2 - k - 1);
+            isScrambledWithoutSwap = ScrambledStrings(dp, a, b, i1, i1 + k, i2, i2 + k) && 
+            ScrambledStrings(dp, a, b, i1 + k + 1, j1, i2 + k + 1, j2);
+        }
+        dp[j1][i1][j2][i2] = isScrambledWithSwap || isScrambledWithoutSwap ? 1 : 0;
+        return isScrambledWithSwap || isScrambledWithoutSwap;
+    }
+
+}

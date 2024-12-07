@@ -1,0 +1,64 @@
+public static void main(String[] args) {
+		String a = "abcdaf", b = "acbcf";
+		System.out.println(printSCS(a, b, a.length(), b.length()));
+	}
+	
+	private static int[][] LCS(String a, String b, int n, int m) {
+	    int dp[][] = new int[n+1][m+1];
+	    for (int j = 0; j<=m; j++) dp[0][j] = 0;
+	    for (int i = 0; i<=n; i++) dp[i][0] = 0;
+	    for(int i=1; i<=n; i++) {
+	        for (int j=1; j<=m; j++) {
+	            if (a.charAt(i-1) == b.charAt(j-1)) {
+	                dp[i][j] = dp[i-1][j-1] + 1;
+	            } else {
+	                dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+	            }
+	        }
+	    }
+	    return dp;
+	}
+	
+	private static String lCSString(String a, String b, int n, int m) {
+	    int[][] dp = LCS(a, b, n, m);
+	    int lCSLength = dp[n][m];
+	    char[] arr = new char[lCSLength];
+	    while (dp[n][m] != 0) {
+	        if (a.charAt(n-1) == b.charAt(m-1)) {
+	            arr[--lCSLength] = a.charAt(--n);
+	            --m;
+	        } else if (dp[n-1][m] == dp[n][m]) {
+	            --n;
+	        } else {
+	            --m;
+	        }
+	    }
+	    return new String(arr);
+	}
+	
+	private static String printSCS(String a, String b, int n, int m) {
+	    String lCSString = lCSString(a, b, n, m);
+	    int i = lCSString.length(), idx = n+m-i;
+	    char charArr[] = new char[idx];
+	    while (i != 0) {
+	        if (n != 0 && m != 0) {
+	            if (a.charAt(n-1) == b.charAt(m-1)) {
+	                charArr[--idx] = a.charAt(--n);
+	                --m;
+	                --i;
+	            } else if (a.charAt(n-1) == lCSString.charAt(i-1)) {
+	                charArr[--idx] = b.charAt(--m);
+	            } else {
+	                charArr[--idx] = a.charAt(--n);
+	            }
+	        } 
+	    }
+	    while (idx != 0) {
+	        if (n != 0) {
+	            charArr[--idx] = a.charAt(--n);
+	        } else {
+	            charArr[--idx] = b.charAt(--m);
+	        }
+	    }
+	    return new String(charArr);
+	}

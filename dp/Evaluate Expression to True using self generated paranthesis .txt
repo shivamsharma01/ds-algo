@@ -1,0 +1,210 @@
+import java.util.Arrays;
+public class Main {
+	public static void main(String[] args) {
+		evaluate("T");
+		evaluate("F");
+		evaluate("T&T");
+		evaluate("T&F");
+		evaluate("F&T");
+		evaluate("F&F");
+		evaluate("F|F");
+		evaluate("F|T");
+		evaluate("T|F");
+		evaluate("T|T");
+		evaluate("F^F");
+		evaluate("F^T");
+		evaluate("T^F");
+		evaluate("T^T");
+ 		evaluate("F&T|T&F&F|F&T|T&F|F");
+ 		evaluate("F&T|T&F&F|F&T|T&F&F");
+ 		evaluate("F&T|T&F&F|F&T|T&F^F");
+ 		evaluate("F&T|T&F&F|F&T|T&F|T");
+ 		evaluate("F&T|T&F&F|F&T|T&F&T");
+ 		evaluate("F&T|T&F&F|F&T|T&F^T");
+	}
+	
+	private static void evaluate(String str) {
+	    int n = str.length();
+	    System.out.println(str+" : ");
+	    evaluateUsingRecursionUtil(str, n);
+	    evaluateUsingMemoizationUtil(str, n);
+        evaluateUsingTabulationUtil(str, n);
+	    System.out.println("\n====================================================\n");
+	}
+	
+	private static boolean getVal(char token) {
+	    return token == 'T' ? true : false;
+	}
+	
+	private static void evaluateUsingRecursionUtil(String str, int n) {
+	    boolean result = evaluateUsingRecursion(str.toUpperCase(), 0, n-1, true);
+	    System.out.println("Using recursion : "+result);
+        
+	}
+	private static boolean evaluateUsingRecursion(String str, int i, int j, boolean expected) {
+	    if (i == j) return getVal(str.charAt(i));
+	    
+	    boolean left, right, result = !expected;
+	    for (int k=i+1; k<j && result != expected; k+=2) {
+	        char operator = str.charAt(k);
+	        switch(operator) {
+	            case '|':
+	            case '&':
+	                if (expected) {
+	                    left = evaluateUsingRecursion(str, i, k-1, true);
+	                    right = evaluateUsingRecursion(str, k+1, j, true);
+	                } else {
+	                    left = evaluateUsingRecursion(str, i, k-1, false);
+	                    right = evaluateUsingRecursion(str, k+1, j, false);
+	                }
+	                result = operator == '|' ? left | right : left & right;
+	                break;
+	            default:
+	                if (expected) {
+	                    left = evaluateUsingRecursion(str, i, k-1, true);
+	                    right = evaluateUsingRecursion(str, k+1, j, false);
+	                    if (left ^ right)
+	                        result = left ^ right;
+	                    else
+	                        result = evaluateUsingRecursion(str, i, k-1, false) ^ evaluateUsingRecursion(str, k+1, j, true);
+	                } else {
+	                    left = evaluateUsingRecursion(str, i, k-1, true);
+	                    right = evaluateUsingRecursion(str, k+1, j, true);
+	                    if (!(left ^ right))
+	                        result = left ^ right;
+	                    else
+	                        result = evaluateUsingRecursion(str, i, k-1, false) ^ evaluateUsingRecursion(str, k+1, j, false);
+	                }
+	        }
+	    }
+	    return result;
+	}
+	
+	private static void evaluateUsingMemoizationUtil(String str, int n) {
+	    int dp[][][] = new int[n][n][2];
+	    for (int i=0; i<n; i++) {
+	        for (int j=0; j<n; j++)
+	            Arrays.fill(dp[i][j], -1);
+	    }
+	    boolean result = evaluateUsingMemoization(dp, str.toUpperCase(), 0, n-1, true);
+	    System.out.println("Using memoization : "+result);
+	}
+	
+	private static boolean evaluateUsingMemoization(int dp[][][], String str, int i, int j, boolean expected) {
+	    if (i == j) return getVal(str.charAt(i));
+	    
+	    int index = expected ? 1 : 0;
+	    if (dp[i][j][index] != -1) return dp[i][j][index] == 1 ? true : false;
+	    
+	    boolean left, right, result = !expected;
+	    for (int k=i+1; k<j && result != expected; k+=2) {
+	        char operator = str.charAt(k);
+	        switch(operator) {
+	            case '|':
+	                if (expected) {
+	                    left = evaluateUsingMemoization(dp, str, i, k-1, true);
+	                    if (left) {
+	                        result = true;
+	                        break;
+	                    }
+	                    right = evaluateUsingMemoization(dp, str, k+1, j, true);
+	                } else {
+	                    left = evaluateUsingMemoization(dp, str, i, k-1, false);
+	                    if (left) {
+	                        continue;
+	                    }
+	                    right = evaluateUsingMemoization(dp, str, k+1, j, false);
+	                }
+	                result = left | right;
+	                break;
+	            case '&':
+	                if (expected) {
+	                    left = evaluateUsingMemoization(dp, str, i, k-1, true);
+	                    if (!left) {
+	                        continue;
+	                    }
+	                    right = evaluateUsingMemoization(dp, str, k+1, j, true);
+	                } else {
+	                    left = evaluateUsingMemoization(dp, str, i, k-1, false);
+	                    right = evaluateUsingMemoization(dp, str, k+1, j, false);
+	                }
+	                result = left & right;
+	                break;
+	            default:
+	                if (expected) {
+	                    left = evaluateUsingMemoization(dp, str, i, k-1, true);
+	                    right = evaluateUsingMemoization(dp, str, k+1, j, false);
+	                    if (left ^ right)
+	                        result = left ^ right;
+	                    else
+	                        result = evaluateUsingMemoization(dp, str, i, k-1, false) ^ evaluateUsingMemoization(dp, str, k+1, j, true);
+	                } else {
+	                    left = evaluateUsingMemoization(dp, str, i, k-1, true);
+	                    right = evaluateUsingMemoization(dp, str, k+1, j, true);
+	                    if (!(left ^ right))
+	                        result = left ^ right;
+	                    else
+	                        result = evaluateUsingMemoization(dp, str, i, k-1, false) ^ evaluateUsingMemoization(dp, str, k+1, j, false);
+	                }
+	        }
+	        dp[i][j][result ? 1 : 0] = result ? 1 : 0;
+	    }
+	    dp[i][j][index] = result ? 1 : 0;
+	    return result;
+	}
+    
+	private static void evaluateUsingTabulationUtil(String str, int n) {
+	    int dp[][][] = new int[n][n][2];
+	    for (int i=0; i<n; i++) {
+	        for (int j=0; j<n; j++)
+	            Arrays.fill(dp[i][j], -1);
+	    }
+	    boolean result = evaluateUsingTabulation(dp, str.toUpperCase(), n);
+	    System.out.println("Using Tabulation : "+result);
+	}
+	
+	private static boolean evaluateUsingTabulation(int dp[][][], String str, int n) {
+	    for (int i=0; i<n; i+=2) {
+	        boolean val = getVal(str.charAt(i));
+	        dp[i][i][0] = val ? 0 : 1;
+	        dp[i][i][1] = val ? 1 : 0;
+	    }
+	    for (int i = 1; 2*i<n; i+=2) {
+	        for (int k=i; k+i<=n; k+=2) {
+	            int left = k - i, right = k + i;
+	            evaluateUsingTabulation(dp, str, left, right);
+	        }
+	    }
+	    return dp[0][n-1][1] == 1 ? true : false;
+	}	
+
+    private static void evaluateUsingTabulation(int dp[][][], String str, int i, int j) {
+        dp[i][j][0] = 0;
+        dp[i][j][1] = 0;
+        for (int k = i + 1; k < j && (dp[i][j][0] == 0 || dp[i][j][1] == 0); k +=2) {
+            char operator = str.charAt(k);
+            int leftParaEnd = k-1, rightParaStart = k+1;
+            switch(operator) {
+                case '|':
+                    if (dp[i][j][0] == 0)
+                        dp[i][j][0] = dp[i][leftParaEnd][0] == 1 && dp[rightParaStart][j][0] == 1 ? 1 : 0;
+                    if (dp[i][j][1] == 0)
+                        dp[i][j][1] = dp[i][leftParaEnd][1] == 1 || dp[rightParaStart][j][1] == 1 ? 1 : 0;
+                    break;
+                case '&':
+                    if (dp[i][j][0] == 0)
+                        dp[i][j][0] = dp[i][leftParaEnd][0] == 1 || dp[rightParaStart][j][0] == 1 ? 1 : 0;
+                    if (dp[i][j][1] == 0)
+                        dp[i][j][1] = dp[i][leftParaEnd][1] == 1 && dp[rightParaStart][j][1] == 1 ? 1 : 0;
+                    break;
+                default:
+                    if (dp[i][j][0] == 0)
+                        dp[i][j][0] = (dp[i][leftParaEnd][0] == 1 && dp[rightParaStart][j][0] == 1) 
+                                  || (dp[i][leftParaEnd][1] == 1 && dp[rightParaStart][j][1] == 1) ? 1 : 0;
+                    if (dp[i][j][1] == 0)
+                        dp[i][j][1] = (dp[i][leftParaEnd][0] == 1 && dp[rightParaStart][j][1] == 1) 
+                                  || (dp[i][leftParaEnd][1] == 1 && dp[rightParaStart][j][0] == 1) ? 1 : 0;
+            }
+        }
+    }
+}
